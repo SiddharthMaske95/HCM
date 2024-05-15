@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_wtW0YBKfEe-6_ZG0FwXAkQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+  <bpmn2:itemDefinition id="__C4159B60-B8E2-4D44-94E1-3B590925DC1B_fooInputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="HCM_Overall_InsightType" structureRef="String"/>
+  <bpmn2:message id="_wtXbcRKfEe-6_ZG0FwXAkQ" itemRef="HCM_Overall_InsightType" name="HCM_Overall_Insight"/>
+  <bpmn2:process id="HCM.hcmoveralltesting" drools:packageName="com.kie_pract.hcm" drools:version="1.0" drools:adHoc="false" name="hcm overall testing" isExecutable="true" processType="Public">
+    <bpmn2:sequenceFlow id="_178660C4-FFDF-48DC-B8D0-17C5EB078168" sourceRef="_EE12C287-79D1-4DD4-A6D6-3123B6D8DE71" targetRef="_C4159B60-B8E2-4D44-94E1-3B590925DC1B">
+      <bpmn2:extensionElements>
+        <drools:metaData name="isAutoConnection.source">
+          <drools:metaValue><![CDATA[true]]></drools:metaValue>
+        </drools:metaData>
+        <drools:metaData name="isAutoConnection.target">
+          <drools:metaValue><![CDATA[true]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:sequenceFlow>
+    <bpmn2:endEvent id="_C4159B60-B8E2-4D44-94E1-3B590925DC1B">
+      <bpmn2:incoming>_178660C4-FFDF-48DC-B8D0-17C5EB078168</bpmn2:incoming>
+      <bpmn2:dataInput id="_C4159B60-B8E2-4D44-94E1-3B590925DC1B_fooInputX" drools:dtype="String" itemSubjectRef="__C4159B60-B8E2-4D44-94E1-3B590925DC1B_fooInputXItem" name="foo"/>
+      <bpmn2:dataInputAssociation id="_wtW0YhKfEe-6_ZG0FwXAkQ">
+        <bpmn2:targetRef>_C4159B60-B8E2-4D44-94E1-3B590925DC1B_fooInputX</bpmn2:targetRef>
+        <bpmn2:assignment id="_wtW0YxKfEe-6_ZG0FwXAkQ">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_wtW0ZBKfEe-6_ZG0FwXAkQ"><![CDATA[hi for hcm overall]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_wtW0ZRKfEe-6_ZG0FwXAkQ">_C4159B60-B8E2-4D44-94E1-3B590925DC1B_fooInputX</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:inputSet id="_wtW0YRKfEe-6_ZG0FwXAkQ">
+        <bpmn2:dataInputRefs>_C4159B60-B8E2-4D44-94E1-3B590925DC1B_fooInputX</bpmn2:dataInputRefs>
+      </bpmn2:inputSet>
+      <bpmn2:messageEventDefinition id="_wtXbcBKfEe-6_ZG0FwXAkQ" drools:msgref="HCM_Overall_Insight" messageRef="_wtXbcRKfEe-6_ZG0FwXAkQ"/>
+    </bpmn2:endEvent>
+    <bpmn2:startEvent id="_EE12C287-79D1-4DD4-A6D6-3123B6D8DE71">
+      <bpmn2:outgoing>_178660C4-FFDF-48DC-B8D0-17C5EB078168</bpmn2:outgoing>
+    </bpmn2:startEvent>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="_wtXbchKfEe-6_ZG0FwXAkQ">
+    <bpmndi:BPMNPlane id="_wtXbcxKfEe-6_ZG0FwXAkQ" bpmnElement="HCM.hcmoveralltesting">
+      <bpmndi:BPMNShape id="shape__EE12C287-79D1-4DD4-A6D6-3123B6D8DE71" bpmnElement="_EE12C287-79D1-4DD4-A6D6-3123B6D8DE71">
+        <dc:Bounds height="56.0" width="56.0" x="328.0" y="116.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__C4159B60-B8E2-4D44-94E1-3B590925DC1B" bpmnElement="_C4159B60-B8E2-4D44-94E1-3B590925DC1B">
+        <dc:Bounds height="56.0" width="56.0" x="464.0" y="116.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge_shape__EE12C287-79D1-4DD4-A6D6-3123B6D8DE71_to_shape__C4159B60-B8E2-4D44-94E1-3B590925DC1B" bpmnElement="_178660C4-FFDF-48DC-B8D0-17C5EB078168">
+        <di:waypoint xsi:type="dc:Point" x="384.0" y="144.0"/>
+        <di:waypoint xsi:type="dc:Point" x="464.0" y="144.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmn2:relationship id="_wtXbdBKfEe-6_ZG0FwXAkQ" type="BPSimData">
+    <bpmn2:extensionElements>
+      <bpsim:BPSimData>
+        <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
+          <bpsim:ScenarioParameters xsi:type="bpsim:ScenarioParameters"/>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_EE12C287-79D1-4DD4-A6D6-3123B6D8DE71" id="_wtXbdRKfEe-6_ZG0FwXAkQ">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+          </bpsim:ElementParameters>
+        </bpsim:Scenario>
+      </bpsim:BPSimData>
+    </bpmn2:extensionElements>
+    <bpmn2:source>_wtW0YBKfEe-6_ZG0FwXAkQ</bpmn2:source>
+    <bpmn2:target>_wtW0YBKfEe-6_ZG0FwXAkQ</bpmn2:target>
+  </bpmn2:relationship>
+</bpmn2:definitions>

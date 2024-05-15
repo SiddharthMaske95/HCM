@@ -1,0 +1,15 @@
+package com.kie_pract.hcm;
+
+import java.lang.Number;
+
+rule "sum"
+	dialect "mvel"
+	ruleflow-group "percentage"
+	salience 10
+	when
+		foo : Fruit( nfc : not_filled_count, total : total_employees, tcle : total_count_late_early, tfl : total_Frequent_leave, lwa : total_lwa_leave, lwp : total_lwp_leave, twl : total_well_leave, sum == null )
+	then
+		modify( foo ) {
+				setSum( tcle + twl + lwp + lwa + tfl )
+		}
+end

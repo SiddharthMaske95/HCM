@@ -1,0 +1,14 @@
+package com.kie_pract.hcm;
+
+import java.lang.Number;
+
+rule "Percentage"
+	dialect "mvel"
+	ruleflow-group "percentage"
+	when
+		foo : Fruit( nfc : not_filled_count, total : total_employees, tcle : total_count_late_early, tfl : total_Frequent_leave, lwa : total_lwa_leave, lwp : total_lwp_leave, twl : total_well_leave, ttePer == null , sum : sum)
+	then
+		modify( foo ) {
+				setTtePer( (nfc/total*100)+((tcle/sum)*2+(tfl/sum)*2+(lwa/sum)*2+(lwp/sum)*2+(twl/sum)*2) )
+		}
+end
